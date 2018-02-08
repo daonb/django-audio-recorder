@@ -16,7 +16,6 @@ class AudioFileCreateViewMixin(View):
             return http.HttpResponseBadRequest()
 
         result = self.create_object(audio_file)
-        print result.audio_file.url
         return http.JsonResponse({
             'id': result.pk,
             'url': result.audio_file.url,

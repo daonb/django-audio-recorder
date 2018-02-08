@@ -4,7 +4,7 @@ import sys
 
 __version__ = '0.0.0'
 __requirements__ = [
-    "django==1.8",
+    "django==2.0.2",
 ]
 
 if sys.argv[-1] == 'publish':

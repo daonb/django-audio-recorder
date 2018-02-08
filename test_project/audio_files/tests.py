@@ -2,7 +2,7 @@ import time
 
 import pytest
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from splinter import Browser
 
 from .views import AudioFileAPICreateView
@@ -13,7 +13,7 @@ from .models import AudioFile
 def test_audio_file_api_create_view(rf):
     request = rf.post('/audio-files/')
     request.FILES['audio_file'] = SimpleUploadedFile(
-        "file.txt", "file_content"
+        "file.txt", b"file_content"
     )
     response = AudioFileAPICreateView.as_view(create_field='audio_file')(request)  # nopep8
     assert response.status_code == 201

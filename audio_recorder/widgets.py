@@ -1,6 +1,5 @@
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.forms import HiddenInput
-from django.contrib.staticfiles.templatetags.staticfiles import static
 
 
 class AudioFileWidget(HiddenInput):
